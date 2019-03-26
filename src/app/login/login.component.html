@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<h1>登入</h1>
+<hr>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<div>
+  <label>
+    帳號:
+    <input type="text" formControlName="account" required class="account">
+  </label>
+</div>
+<div>
+  <label>
+    密碼:
+    <input type="password" formControlName="password" required id="password">
+  </label>
+</div>
+  <button type="submit" [disabled]="!profileForm.valid">送出</button>
+</form>
