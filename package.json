@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "wdmupdate": "webdriver-manager update",
+    "e2edefault": "ng e2e",
+    "e2e": "ng e2e --dev-server-target= --webdriver-update=false"
   },
   "private": true,
   "dependencies": {

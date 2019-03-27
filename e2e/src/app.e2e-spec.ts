@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('title should be GMProtractorLab', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to GMProtractorLab!');
+    expect(browser.getTitle()).toEqual('GMProtractorLab');
   });
 
   afterEach(async () => {
