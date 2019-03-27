@@ -8,13 +8,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
   profileForm = new FormGroup({
     account: new FormControl(''),
-    password: new FormControl(''),
+    password: new FormControl('')
   });
-  constructor() { }
+  success: boolean;
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   onSubmit() {
-    console.warn(this.profileForm.value);
+    this.success =
+      this.profileForm.value.account === 'zhen' &&
+      this.profileForm.value.password === '123456';
   }
 }
