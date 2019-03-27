@@ -15,5 +15,7 @@
   </div>
   <button type="submit" [disabled]="!profileForm.valid">送出</button>
 </form>
-<h1 *ngIf="success===true">登入成功</h1>
-<h1 *ngIf="success===false">登入失敗</h1>
+<h2 *ngIf="success===true">登入成功</h2>
+<h2 *ngIf="success===false">登入失敗</h2>
+<button type="button" *ngIf="success===true" (click)="signOut()">登出</button>
+<button type="button" *ngIf="success===false" (click)="signOut()">重新登入</button>

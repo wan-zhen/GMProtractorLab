@@ -19,4 +19,7 @@ export class LoginComponent implements OnInit {
       this.profileForm.value.account === 'zhen' &&
       this.profileForm.value.password === '123456';
   }
+  signOut() {
+    location.reload();
+  }
 }
