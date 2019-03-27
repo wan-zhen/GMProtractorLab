@@ -22,7 +22,8 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function () {}
   },
-  onPrepare() {
+  // node.js 7.6.0+ 完整支援 async/await
+  async onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
