@@ -8,16 +8,21 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('title should be GMProtractorLab',async () => {
-   await page.navigateTo();
-    expect(await browser.getTitle()).toEqual('GMProtractorLab');
+  it('title should be GMProtractorLab', () => {
+    page.navigateTo();
+    expect(browser.getTitle()).toEqual('GMProtractorLab');
   });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+    const logs = await browser
+      .manage()
+      .logs()
+      .get(logging.Type.BROWSER);
+    expect(logs).not.toContain(
+      jasmine.objectContaining({
+        level: logging.Level.SEVERE
+      } as logging.Entry)
+    );
   });
 });
