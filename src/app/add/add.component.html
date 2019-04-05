@@ -1,0 +1,13 @@
+<h1>練習 ExpectedConditions</h1>
+<hr>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" *ngIf="success===undefined">
+  <div>
+    <label>
+      User:
+      <input type="text" formControlName="account" required class="account">
+    </label>
+  </div>
+  <br>
+  <button type="submit" [disabled]="!canSend">新增</button>
+</form>
+<h2 *ngIf="success===true">新增成功</h2>
