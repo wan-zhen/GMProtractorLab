@@ -13,7 +13,7 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  // SELENIUM_PROMISE_MANAGER: false, // Protractor / Selenium 未來將不支援 Control Flow
+  SELENIUM_PROMISE_MANAGER: false, // Protractor / Selenium 未來將不支援 Control Flow
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
@@ -27,7 +27,7 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({
+    await jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
         displayStacktrace: true
       }
