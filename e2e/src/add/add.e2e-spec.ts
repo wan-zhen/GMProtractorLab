@@ -6,7 +6,7 @@ import { element, by, browser, $, ExpectedConditions as EC } from 'protractor';
  * ---step 4. 按下新增
  * ---step 5. 等待 alert 出現
  * step 6. 確定 alert
- * 期待會看到新增成功
+ * 預期會看到新增成功
  */
 describe('add', () => {
   fit('新增 user 會看到新增成功', async () => {
