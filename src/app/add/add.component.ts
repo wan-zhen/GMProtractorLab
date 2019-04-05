@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -12,10 +12,16 @@ export class AddComponent implements OnInit {
   });
   success: boolean;
   canSend: boolean;
-  constructor() {
-    setTimeout(() => {
-      this.canSend = true;
-    }, 8000);
+  constructor(private ngZone: NgZone) {
+    this.ngZone.runOutsideAngular(() => {
+      setTimeout(() => {
+        // 再加回 ngZone 不然畫面不會被通知變更
+        // 假設原本就這樣寫 就不會讓 angular 一直有 change 的監聽
+        this.ngZone.run(() => {
+          this.canSend = true;
+        });
+      }, 2000);
+    });
   }
 
   ngOnInit() {}
