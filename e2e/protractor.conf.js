@@ -16,6 +16,7 @@ exports.config = {
   SELENIUM_PROMISE_MANAGER: false, // Protractor / Selenium 未來將不支援 Control Flow
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
+  //baseUrl:'https://www.google.com/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -27,6 +28,7 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
+    //await browser.waitForAngularEnabled(false);
     await jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
         displayStacktrace: true
